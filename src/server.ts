@@ -53,8 +53,8 @@ app.use(
 // discovery document. Its OAuth redirect URI is derived from the request, so
 // no extra URL config is needed here.
 if (enableTesterUi) {
-  if (!process.env.OKTA_CLIENT_ID || !process.env.OKTA_AI_AGENT_ID) {
-    console.warn('[server] tester UI is on but OKTA_CLIENT_ID / OKTA_AI_AGENT_ID are not set — sign-in will fail');
+  if (!process.env.OKTA_AI_AGENT_ID || !process.env.OKTA_AI_AGENT_PRIVATE_KEY) {
+    console.warn('[server] tester UI is on but OKTA_AI_AGENT_ID / OKTA_AI_AGENT_PRIVATE_KEY are not set — sign-in will fail');
   }
   app.use(createTesterApp());
 }

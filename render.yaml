@@ -15,10 +15,6 @@ services:
         sync: false
       # The demo UI is served by this same process at '/'. Set
       # ENABLE_TESTER_UI=false to serve the MCP endpoint only.
-      - key: OKTA_CLIENT_ID
-        sync: false
-      - key: OKTA_CLIENT_SECRET
-        sync: false
       - key: OKTA_ISSUER
         sync: false
       - key: OKTA_AI_AGENT_ID

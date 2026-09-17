@@ -10,7 +10,7 @@ import {
   resolveMcpBaseUrl,
   resolveRedirectUri,
 } from './config.js';
-import { exchangeUserTokenForDomainAccessToken } from './idJag.js';
+import { exchangeUserTokenForDomainAccessToken, postForm, signClientAssertion } from './idJag.js';
 import { callMcpTool } from './mcpClient.js';
 import { generatePkce, randomState } from './pkce.js';
 import { dashboardPage, errorPage, loginPage, resultPage } from './views.js';
@@ -58,7 +58,7 @@ export function createTesterApp() {
     pendingLogins.set(state, { verifier });
 
     const params: Record<string, string> = {
-      client_id: config.clientId(),
+      client_id: config.agentId(),
       response_type: 'code',
       scope: 'openid profile email',
       redirect_uri: resolveRedirectUri(req),
@@ -90,27 +90,22 @@ export function createTesterApp() {
     pendingLogins.delete(state);
 
     try {
+      const tokenEndpoint = issuerEndpoint(config.loginIssuer(), 'token');
+      const clientAssertion = await signClientAssertion(config.agentId(), config.agentPrivateJwk(), tokenEndpoint);
+
       const body: Record<string, string> = {
         grant_type: 'authorization_code',
         code,
         redirect_uri: resolveRedirectUri(req),
         code_verifier: pending.verifier,
+        client_id: config.agentId(),
+        client_assertion_type: 'urn:ietf:params:oauth:client-assertion-type:jwt-bearer',
+        client_assertion: clientAssertion,
       };
       const resource = config.agentAudience();
       if (resource) body.resource = resource;
 
-      const basicAuth = Buffer.from(`${config.clientId()}:${config.clientSecret()}`).toString('base64');
-      const tokenRes = await fetch(issuerEndpoint(config.loginIssuer(), 'token'), {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          Authorization: `Basic ${basicAuth}`,
-        },
-        body: new URLSearchParams(body),
-      });
-
-      const tokenJson = await tokenRes.json();
-      if (!tokenRes.ok) throw new Error(`Token endpoint returned ${tokenRes.status}: ${JSON.stringify(tokenJson)}`);
+      const tokenJson = await postForm(tokenEndpoint, body);
 
       const idToken = tokenJson.id_token as string;
       const claims = decodeJwt(idToken) as Record<string, unknown>;

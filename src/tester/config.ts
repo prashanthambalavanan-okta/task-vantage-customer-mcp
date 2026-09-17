@@ -13,8 +13,6 @@ export const config = {
   redirectUri: process.env.REDIRECT_URI ?? `http://localhost:${Number(process.env.PORT ?? 3000)}/callback`,
 
   oktaDomain: () => required('OKTA_DOMAIN').replace(/\/$/, ''),
-  clientId: () => required('OKTA_CLIENT_ID'),
-  clientSecret: () => required('OKTA_CLIENT_SECRET'),
   /** Optional — if unset, ID-JAG step 1 goes to the org-level token endpoint (https://{domain}/oauth2/v1/token). */
   mainAuthServerId: () => process.env.OKTA_MAIN_AUTH_SERVER_ID || undefined,
   /**
@@ -38,6 +36,13 @@ export const config = {
     return mainAuthServerId ? `${domain}/oauth2/${mainAuthServerId}` : domain;
   },
 
+  /**
+   * The AI agent's own identity. The human logs into this same Okta app —
+   * there is no separate Web app client anymore — authenticating with a
+   * `private_key_jwt` client assertion signed by this key instead of a
+   * client secret. The agent then reuses this identity + key to run the
+   * ID-JAG exchange on the user's behalf.
+   */
   agentId: () => required('OKTA_AI_AGENT_ID'),
   agentPrivateJwk: () => JSON.parse(required('OKTA_AI_AGENT_PRIVATE_KEY')),
   /**

@@ -18,7 +18,7 @@ import { UpstreamHttpError } from './httpError.js';
  * assertion (RFC 7523) signed by its own private key — no shared secret.
  */
 
-async function signClientAssertion(agentId: string, privateJwk: JWK, audience: string): Promise<string> {
+export async function signClientAssertion(agentId: string, privateJwk: JWK, audience: string): Promise<string> {
   const alg = (privateJwk.alg as string) ?? 'RS256';
   const key = await importJWK(privateJwk, alg);
   const now = Math.floor(Date.now() / 1000);
@@ -34,7 +34,7 @@ async function signClientAssertion(agentId: string, privateJwk: JWK, audience: s
     .sign(key);
 }
 
-async function postForm(endpoint: string, params: Record<string, string>): Promise<any> {
+export async function postForm(endpoint: string, params: Record<string, string>): Promise<any> {
   const res = await fetch(endpoint, {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },

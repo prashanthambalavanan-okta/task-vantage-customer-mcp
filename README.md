@@ -123,10 +123,10 @@ Okta side, before that works:
 
 The tester UI is mounted at `/` by default (set `ENABLE_TESTER_UI=false` to disable it — worth doing if this process is ever exposed to agents you don't control, since the UI holds the ID-JAG signing key).
 
-1. **Sign in** via Okta Authorization Code + PKCE (confidential Web app — client ID + secret, plus PKCE for defense in depth).
+1. **Sign in** as the AI Agent itself via Okta Authorization Code + PKCE, authenticated with a `private_key_jwt` client assertion signed by the agent's own private key — no separate Web app client, no client secret.
 2. The dashboard lists all 7 customer tools with a pre-filled, editable JSON argument box per tool.
 3. Clicking **Run** plays the role of **the AI agent**: it runs the two-step [ID-JAG](https://datatracker.ietf.org/doc/html/draft-parecki-oauth-identity-assertion-authz-grant) exchange — your login token → an ID-JAG (at the org token endpoint, authenticated as the agent via a JWT client assertion) → a scoped access token (at this Custom Authorization Server's own token endpoint) — then calls `/mcp` with that token and shows a formatted rendering of the result, with the raw JSON-RPC response available behind a toggle. The end-user access token and the MCP server access token sit in a right-hand pane, each with decoded claims one click away.
 
-Additional env vars needed for the tester UI: `OKTA_CLIENT_ID`, `OKTA_CLIENT_SECRET`, `OKTA_AI_AGENT_ID`, `OKTA_AI_AGENT_PRIVATE_KEY` (see `.env.example` for the full list and what each one does). The Custom Authorization Server needs a `customer:write` scope granted to the AI agent's access policy for `add_customer`/`delete_customer` to work.
+Additional env vars needed for the tester UI: `OKTA_AI_AGENT_ID`, `OKTA_AI_AGENT_PRIVATE_KEY` (see `.env.example` for the full list and what each one does). The Custom Authorization Server needs a `customer:write` scope granted to the AI agent's access policy for `add_customer`/`delete_customer` to work.
 
 If a step fails, the error page shows the raw error from whichever endpoint rejected the request — usually enough to tell which policy or config is the problem (e.g. `no_matching_policy` means the logged-in user isn't authorized for the customer scopes).
