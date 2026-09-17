@@ -1,0 +1,310 @@
+{
+  "customers": {
+    "CUST-001": {
+      "id": "CUST-001",
+      "name": "State University Athletics",
+      "contact": "John Anderson",
+      "email": "janderson@stateuniv.edu",
+      "tier": "Platinum",
+      "total_spent": 124500,
+      "location": "Columbus, OH"
+    },
+    "CUST-002": {
+      "id": "CUST-002",
+      "name": "Metro High School District",
+      "contact": "Maria Santos",
+      "email": "msantos@metrohsd.edu",
+      "tier": "Platinum",
+      "total_spent": 118200,
+      "location": "Chicago, IL"
+    },
+    "CUST-003": {
+      "id": "CUST-003",
+      "name": "Pacific Coast Sports League",
+      "contact": "David Chen",
+      "email": "dchen@pcsl.org",
+      "tier": "Platinum",
+      "total_spent": 142800,
+      "location": "Los Angeles, CA"
+    },
+    "CUST-004": {
+      "id": "CUST-004",
+      "name": "Elite Basketball Academy",
+      "contact": "Sarah Mitchell",
+      "email": "smitchell@eliteba.com",
+      "tier": "Platinum",
+      "total_spent": 98500,
+      "location": "Atlanta, GA"
+    },
+    "CUST-005": {
+      "id": "CUST-005",
+      "name": "Riverside Community College",
+      "contact": "James Wilson",
+      "email": "jwilson@riversidecc.edu",
+      "tier": "Gold",
+      "total_spent": 67400,
+      "location": "Phoenix, AZ"
+    },
+    "CUST-006": {
+      "id": "CUST-006",
+      "name": "Downtown Recreation Center",
+      "contact": "Lisa Park",
+      "email": "lpark@downtownrec.org",
+      "tier": "Gold",
+      "total_spent": 45200,
+      "location": "Seattle, WA"
+    },
+    "CUST-007": {
+      "id": "CUST-007",
+      "name": "Eastside Youth League",
+      "contact": "Michael Brown",
+      "email": "mbrown@eastsideyl.org",
+      "tier": "Gold",
+      "total_spent": 52800,
+      "location": "Boston, MA"
+    },
+    "CUST-008": {
+      "id": "CUST-008",
+      "name": "Champions Training Facility",
+      "contact": "Robert Taylor",
+      "email": "rtaylor@champstf.com",
+      "tier": "Gold",
+      "total_spent": 78900,
+      "location": "Dallas, TX"
+    },
+    "CUST-009": {
+      "id": "CUST-009",
+      "name": "Valley High School",
+      "contact": "Jennifer Lee",
+      "email": "jlee@valleyhs.edu",
+      "tier": "Gold",
+      "total_spent": 38600,
+      "location": "Denver, CO"
+    },
+    "CUST-010": {
+      "id": "CUST-010",
+      "name": "Northside Sports Club",
+      "contact": "William Garcia",
+      "email": "wgarcia@northsidesc.com",
+      "tier": "Gold",
+      "total_spent": 41200,
+      "location": "Miami, FL"
+    },
+    "CUST-011": {
+      "id": "CUST-011",
+      "name": "Lincoln Middle School",
+      "contact": "Amanda Johnson",
+      "email": "ajohnson@lincolnms.edu",
+      "tier": "Silver",
+      "total_spent": 18400,
+      "location": "Portland, OR"
+    },
+    "CUST-012": {
+      "id": "CUST-012",
+      "name": "Sunset Recreation League",
+      "contact": "Kevin Martinez",
+      "email": "kmartinez@sunsetrl.org",
+      "tier": "Silver",
+      "total_spent": 12600,
+      "location": "San Diego, CA"
+    },
+    "CUST-013": {
+      "id": "CUST-013",
+      "name": "Community Youth Center",
+      "contact": "Rachel Thompson",
+      "email": "rthompson@cyc.org",
+      "tier": "Silver",
+      "total_spent": 15800,
+      "location": "Houston, TX"
+    },
+    "CUST-014": {
+      "id": "CUST-014",
+      "name": "Lakeside Gym",
+      "contact": "Daniel White",
+      "email": "dwhite@lakesidegym.com",
+      "tier": "Silver",
+      "total_spent": 8900,
+      "location": "Minneapolis, MN"
+    },
+    "CUST-015": {
+      "id": "CUST-015",
+      "name": "East County YMCA",
+      "contact": "Michelle Davis",
+      "email": "mdavis@ecymca.org",
+      "tier": "Silver",
+      "total_spent": 22100,
+      "location": "Philadelphia, PA"
+    },
+    "CUST-016": {
+      "id": "CUST-016",
+      "name": "Hoops Academy Jr",
+      "contact": "Christopher Lee",
+      "email": "clee@hoopsacademyjr.com",
+      "tier": "Silver",
+      "total_spent": 19500,
+      "location": "Detroit, MI"
+    },
+    "CUST-017": {
+      "id": "CUST-017",
+      "name": "Parks & Rec Department",
+      "contact": "Stephanie Moore",
+      "email": "smoore@cityparks.gov",
+      "tier": "Silver",
+      "total_spent": 11200,
+      "location": "Nashville, TN"
+    },
+    "CUST-018": {
+      "id": "CUST-018",
+      "name": "St. Mary's Catholic School",
+      "contact": "Thomas Anderson",
+      "email": "tanderson@stmarys.edu",
+      "tier": "Silver",
+      "total_spent": 16700,
+      "location": "St. Louis, MO"
+    },
+    "CUST-019": {
+      "id": "CUST-019",
+      "name": "Corner Store Sports",
+      "contact": "Brian Jackson",
+      "email": "bjackson@cornerstoresports.com",
+      "tier": "Bronze",
+      "total_spent": 3200,
+      "location": "Austin, TX"
+    },
+    "CUST-020": {
+      "id": "CUST-020",
+      "name": "Local Hoops Club",
+      "contact": "Nancy Williams",
+      "email": "nwilliams@localhoops.org",
+      "tier": "Bronze",
+      "total_spent": 2800,
+      "location": "Raleigh, NC"
+    },
+    "CUST-021": {
+      "id": "CUST-021",
+      "name": "Neighborhood Gym",
+      "contact": "Paul Robinson",
+      "email": "probinson@neighborhoodgym.com",
+      "tier": "Bronze",
+      "total_spent": 4100,
+      "location": "Cleveland, OH"
+    },
+    "CUST-022": {
+      "id": "CUST-022",
+      "name": "First Baptist Church League",
+      "contact": "Linda Martinez",
+      "email": "lmartinez@fbcleague.org",
+      "tier": "Bronze",
+      "total_spent": 1900,
+      "location": "Oklahoma City, OK"
+    },
+    "CUST-023": {
+      "id": "CUST-023",
+      "name": "Sunset Elementary PTA",
+      "contact": "Mark Thompson",
+      "email": "mthompson@sunsetpta.org",
+      "tier": "Bronze",
+      "total_spent": 2400,
+      "location": "Sacramento, CA"
+    },
+    "CUST-024": {
+      "id": "CUST-024",
+      "name": "Joe's Sporting Goods",
+      "contact": "Joseph Brown",
+      "email": "jbrown@joessports.com",
+      "tier": "Bronze",
+      "total_spent": 4800,
+      "location": "Indianapolis, IN"
+    },
+    "CUST-025": {
+      "id": "CUST-025",
+      "name": "Coastal Basketball Academy",
+      "contact": "Emily Rodriguez",
+      "email": "erodriguez@coastalba.com",
+      "tier": "Platinum",
+      "total_spent": 108900,
+      "location": "San Antonio, TX"
+    },
+    "CUST-026": {
+      "id": "CUST-026",
+      "name": "Midwest Collegiate League",
+      "contact": "Steven Clark",
+      "email": "sclark@midwestcl.org",
+      "tier": "Platinum",
+      "total_spent": 132400,
+      "location": "Kansas City, MO"
+    },
+    "CUST-027": {
+      "id": "CUST-027",
+      "name": "Bright Future Youth Sports",
+      "contact": "Angela Turner",
+      "email": "aturner@brightfutureys.org",
+      "tier": "Gold",
+      "total_spent": 61300,
+      "location": "Charlotte, NC"
+    },
+    "CUST-028": {
+      "id": "CUST-028",
+      "name": "Riverside Prep Academy",
+      "contact": "George Kim",
+      "email": "gkim@riversideprep.edu",
+      "tier": "Gold",
+      "total_spent": 55700,
+      "location": "Salt Lake City, UT"
+    },
+    "CUST-029": {
+      "id": "CUST-029",
+      "name": "Union Athletic Club",
+      "contact": "Patricia Nguyen",
+      "email": "pnguyen@unionathletic.org",
+      "tier": "Silver",
+      "total_spent": 24800,
+      "location": "Pittsburgh, PA"
+    },
+    "CUST-030": {
+      "id": "CUST-030",
+      "name": "Maple Grove Rec League",
+      "contact": "Frank Sullivan",
+      "email": "fsullivan@maplegrove.org",
+      "tier": "Silver",
+      "total_spent": 17200,
+      "location": "Milwaukee, WI"
+    },
+    "CUST-031": {
+      "id": "CUST-031",
+      "name": "Horizon Middle School",
+      "contact": "Diane Foster",
+      "email": "dfoster@horizonms.edu",
+      "tier": "Silver",
+      "total_spent": 14900,
+      "location": "Albuquerque, NM"
+    },
+    "CUST-032": {
+      "id": "CUST-032",
+      "name": "Sunrise Community Gym",
+      "contact": "Carlos Mendez",
+      "email": "cmendez@sunrisegym.com",
+      "tier": "Bronze",
+      "total_spent": 3600,
+      "location": "Tucson, AZ"
+    },
+    "CUST-033": {
+      "id": "CUST-033",
+      "name": "Westside Boys & Girls Club",
+      "contact": "Laura Bennett",
+      "email": "lbennett@westsidebgc.org",
+      "tier": "Bronze",
+      "total_spent": 2100,
+      "location": "Baltimore, MD"
+    },
+    "CUST-034": {
+      "id": "CUST-034",
+      "name": "Pineview Elementary PTA",
+      "contact": "Ryan Coleman",
+      "email": "rcoleman@pineviewpta.org",
+      "tier": "Bronze",
+      "total_spent": 1700,
+      "location": "Louisville, KY"
+    }
+  }
+}

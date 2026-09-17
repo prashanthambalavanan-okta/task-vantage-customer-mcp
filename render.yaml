@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: task-vantage-customer-mcp
+    runtime: node
+    plan: starter
+    buildCommand: npm install && npm run build
+    startCommand: node dist/server.js
+    healthCheckPath: /health
+    envVars:
+      - key: OKTA_DOMAIN
+        sync: false
+      - key: OKTA_CUSTOMER_AUTH_SERVER_ID
+        sync: false
+      - key: OKTA_CUSTOMER_AUDIENCE
+        sync: false
+      # The demo UI is served by this same process at '/'. Set
+      # ENABLE_TESTER_UI=false to serve the MCP endpoint only.
+      - key: OKTA_CLIENT_ID
+        sync: false
+      - key: OKTA_CLIENT_SECRET
+        sync: false
+      - key: OKTA_ISSUER
+        sync: false
+      - key: OKTA_AI_AGENT_ID
+        sync: false
+      - key: OKTA_AI_AGENT_PRIVATE_KEY
+        sync: false
+      - key: OKTA_AI_AGENT_AUDIENCE
+        sync: false
